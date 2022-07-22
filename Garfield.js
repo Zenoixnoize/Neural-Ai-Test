@@ -641,7 +641,7 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
             text: ttsMessage,
             voice: LANG
         });
-       GarfieldNeural.sendMessage(message.jid,buffer, MessageType.audio, {mimetype: Mimetype.mp4Audio,quoted: message.data,  ptt: true})
+       GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
     
     break
             default:
