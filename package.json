@@ -33,8 +33,10 @@
     "file-type": "^16.5.3",
     "fluent-ffmpeg": "^2.1.2",
     "fs": "0.0.1-security",
+    "http": "0.0.1"
     "got": "^11.8.3",
     "g-i-s": "^2.1.6",
+    "google-translate-tts": "0.3.0",
     "google-it": "^1.6.2",
     "hxz-api": "^1.0.1",
     "human-readable": "^0.2.1",
