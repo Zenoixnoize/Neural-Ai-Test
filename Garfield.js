@@ -621,7 +621,8 @@ if (q.includes('--help')) return reply(examkosong)
      await GarfieldNeural.send5ButImg(from, `` + '' + teksehmazeh, `© ${footer}`, GarfieldNeural, [{"urlButton": {"displayText": `${global.fbt}`,"url": `${myweb}`}}])
   }
   break
-      	    case 'neural' {
+	case 'neural' :
+		
 if (!text) return reply(`Example : ${prefix + command} kuweni`)
           let 
             LANG = 'si',
@@ -642,7 +643,7 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
         });
         //Coded by Tharindu Liyanage
        GarfieldNeural.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
-    }
+    
     break
             default:
                 if (budy.startsWith('=>')) {
