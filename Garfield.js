@@ -630,8 +630,8 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
             SPEED = 1.0
 
         if(langMatch = (text).match("\\{([a-z]{2})\\}")) {
-            LANG = langMatch[1]
-            ttsMessage = ttsMessage.replace(langMatch[0], "")
+            LANG = lang(text)
+            ttsMessage = ttsMessage.replace(lang(text), "")
         } 
         if(speedMatch = (text).match("\\{([0].[0-9]+)\\}")) {
             SPEED = parseFloat(speedMatch[1])
@@ -641,8 +641,9 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
             text: ttsMessage,
             voice: LANG
         });
-        //Coded by Tharindu Liyanage
-          GarfieldNeural.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mp4', fileName: `neuralAi.wav` }, { quoted: m })
+        //Coded by Tharindu Liyanage   
+       GarfieldNeural.sendMessage(message.jid,buffer, MessageType.audio, {mimetype: Mimetype.mp4Audio,quoted: message.data,  ptt: true})
+    
     break
             default:
                 if (budy.startsWith('=>')) {
