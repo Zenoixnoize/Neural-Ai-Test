@@ -631,7 +631,7 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
 
         if(langMatch = (text).match("\\{([a-z]{2})\\}")) {
             LANG = lang(text)
-            ttsMessage = ttsMessage.replace(lang(text), "")
+            ttsMessage = ttsMessage.replace(langMatch[0], "")
         } 
         if(speedMatch = (text).match("\\{([0].[0-9]+)\\}")) {
             SPEED = parseFloat(speedMatch[1])
@@ -641,7 +641,6 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
             text: ttsMessage,
             voice: LANG
         });
-        //Coded by Tharindu Liyanage   
        GarfieldNeural.sendMessage(message.jid,buffer, MessageType.audio, {mimetype: Mimetype.mp4Audio,quoted: message.data,  ptt: true})
     
     break
