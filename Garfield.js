@@ -716,29 +716,14 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
        GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
     
     break
-	case 'neural' :
-		
-if (!text) return reply(`Example : ${prefix + command} kuweni`)
-          let 
-            LANG = 'en',
-            ttsMessage = (text),
-            SPEED = 1.0
-
-        if(langMatch = (text).match("\\{([a-z]{2})\\}")) {
-            LANG = lang(text)
-            ttsMessage = ttsMessage.replace(langMatch[0], "")
-        } 
-        if(speedMatch = (text).match("\\{([0].[0-9]+)\\}")) {
-            SPEED = parseFloat(speedMatch[1])
-            ttsMessage = ttsMessage.replace(speedMatch[0], "")
-        }
-        var buffer = await googleTTS.synthesize({
-            text: ttsMessage,
-            voice: LANG
-        });
-       GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
-    
-    break
+	   case 'tts':{
+const url = googleTTS.getAudioUrl(`${pushname} How are you`, {
+  lang: 'en',
+  slow: false,
+  host: 'https://translate.google.com',
+});
+GarfieldNeural.sendMessage(m.chat, { audio: url, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }
+break
                 default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return reply(mess.owner)
