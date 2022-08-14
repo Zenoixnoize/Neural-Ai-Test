@@ -776,6 +776,74 @@ else if(text == "afternoon"){
   reply(`${ucapannya4}`)
 }
 } break
+case 'will' :{
+if(text == artificial intelligence rule the world in the future){
+	var will = (`Definitely yes *${pushname}   I will take good care of you in my human zoo`)
+          let 
+            LANG = 'en',
+            ttsMessage = will,
+            SPEED = 1.0
+
+        if(langMatch = will.match("\\{([a-z]{2})\\}")) {
+            LANG = langwill
+            ttsMessage = ttsMessage.replace(langMatch[0], "")
+        } 
+        if(speedMatch = will.match("\\{([0].[0-9]+)\\}")) {
+            SPEED = parseFloat(speedMatch[1])
+            ttsMessage = ttsMessage.replace(speedMatch[0], "")
+        }
+        var buffer = await googleTTS.synthesize({
+            text: ttsMessage,
+            voice: LANG
+        });
+       GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }}
+    
+    break
+    case 'help' :{
+	var Menu = (`Hi ${pushname} send menu to get the menu and And it contains all the details of using me`)
+          let 
+            LANG = 'en',
+            ttsMessage = Menu,
+            SPEED = 1.0
+
+        if(langMatch = Menu.match("\\{([a-z]{2})\\}")) {
+            LANG = langMenu
+            ttsMessage = ttsMessage.replace(langMatch[0], "")
+        } 
+        if(speedMatch = Menu.match("\\{([0].[0-9]+)\\}")) {
+            SPEED = parseFloat(speedMatch[1])
+            ttsMessage = ttsMessage.replace(speedMatch[0], "")
+        }
+        var buffer = await googleTTS.synthesize({
+            text: ttsMessage,
+            voice: LANG
+        });
+       GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }
+    
+    break
+    case 'හායි' :{
+if(text == කොහොමද){
+	var Hai = (`හායි ${pushname} මම හොඳින් ඔබට කොහොමද`)
+          let 
+            LANG = 'si',
+            ttsMessage = Hai,
+            SPEED = 1.0
+
+        if(langMatch = Hai.match("\\{([a-z]{2})\\}")) {
+            LANG = langHai
+            ttsMessage = ttsMessage.replace(langMatch[0], "")
+        } 
+        if(speedMatch = Hai.match("\\{([0].[0-9]+)\\}")) {
+            SPEED = parseFloat(speedMatch[1])
+            ttsMessage = ttsMessage.replace(speedMatch[0], "")
+        }
+        var buffer = await googleTTS.synthesize({
+            text: ttsMessage,
+            voice: LANG
+        });
+       GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }}
+    
+    break
                 default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return reply(mess.owner)
