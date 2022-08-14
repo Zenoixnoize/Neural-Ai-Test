@@ -716,7 +716,9 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
        GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
     
     break
-case 'neural' 
+	case 'neural' :
+		
+if (!text) return reply(`Example : ${prefix + command} kuweni`)
           let 
             LANG = 'en',
             ttsMessage = (text),
@@ -737,7 +739,6 @@ case 'neural'
        GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
     
     break
-
                 default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return reply(mess.owner)
