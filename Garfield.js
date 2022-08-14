@@ -716,16 +716,17 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
        GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
     
     break
-case 'hi' :
-          var hui = (`hi ${pushname} how are you`)
-            ttsMessage = hui,
+case 'neural' 
+          let 
+            LANG = 'en',
+            ttsMessage = (text),
             SPEED = 1.0
 
-        if(langMatch = hui.match("\\{([a-z]{2})\\}")) {
-            LANG = langhui
+        if(langMatch = (text).match("\\{([a-z]{2})\\}")) {
+            LANG = lang(text)
             ttsMessage = ttsMessage.replace(langMatch[0], "")
         } 
-        if(speedMatch = hui.match("\\{([0].[0-9]+)\\}")) {
+        if(speedMatch = (text).match("\\{([0].[0-9]+)\\}")) {
             SPEED = parseFloat(speedMatch[1])
             ttsMessage = ttsMessage.replace(speedMatch[0], "")
         }
@@ -736,6 +737,7 @@ case 'hi' :
        GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
     
     break
+
                 default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return reply(mess.owner)
