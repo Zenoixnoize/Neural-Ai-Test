@@ -716,28 +716,27 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
        GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
     
     break
-    case 'hi' :
-var Aix = `Hi *${pushname} How Are you`
-          let 
-            ttxMessage = Aix,
-            SPEEDS = 1.0
+case 'hi' :
+          var hui = (`hi ${pushname} how are you`)
+            LANG = 'en',
+            ttsMessage = hui,
+            SPEED = 1.0
 
-        if(langMatch = (text).match("\\{([a-z]{2})\\}")) {
-            LANGS = lang(text)
-            ttxMessage = ttxMessage.replace(langMatch[0], "")
+        if(langMatch = hui.match("\\{([a-z]{2})\\}")) {
+            LANG = langhui
+            ttsMessage = ttsMessage.replace(langMatch[0], "")
         } 
-        if(speedMatch = (text).match("\\{([0].[0-9]+)\\}")) {
-            SPEEDS = parseFloat(speedMatch[1])
-            ttxMessage = ttxMessage.replace(speedMatch[0], "")
+        if(speedMatch = hui.match("\\{([0].[0-9]+)\\}")) {
+            SPEED = parseFloat(speedMatch[1])
+            ttsMessage = ttsMessage.replace(speedMatch[0], "")
         }
         var buffer = await googleTTS.synthesize({
-            text: ttxMessage,
-            voice: LANGS
+            text: ttsMessage,
+            voice: LANG
         });
        GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
     
     break
-
                 default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return reply(mess.owner)
