@@ -719,7 +719,6 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
 case 'hi' :
 var Aix = `Hi *${pushname} How Are you`
           let 
-            LANG = 'en',
             ttsMessage = Aix,
             SPEED = 1.0
 
@@ -738,13 +737,12 @@ var Aix = `Hi *${pushname} How Are you`
        GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
     
     break
-case 'good'{
+case 'good':{
 if(text = "morning"){reply(`${ucapannya3}`)}
 
 else if(text = "morning"){
 var vio = `Good Morning *${pushname}`
           let 
-            LANG = 'en',
             ttsMessage = vio,
             SPEED = 1.0
 
@@ -764,9 +762,7 @@ var vio = `Good Morning *${pushname}`
 
 break
 
-
-
-            default:
+                default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return reply(mess.owner)
                     function Return(sul) {
