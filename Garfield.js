@@ -716,16 +716,11 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
        GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }
     
     break
-	
-case 'mk' :{
+case 'hil' :{
 		
 if (!text) return reply(`Example : ${prefix + command} kuweni`)
-         const hui = (`Hi ${pushname} How are you`) ;
-         (text) = hui
           let 
             LANG = 'en',
- 
-            text = hui,
             ttsMessage = (text),
             SPEED = 1.0
 
@@ -742,6 +737,31 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
             voice: LANG
         });
        GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }
+    
+    break
+	
+case 'hi' :{
+	var Hi = (`Hi ${pushname} How are you`)
+          let 
+            LANG = 'en',
+            ttsMessage = Hi,
+            SPEED = 1.0
+
+        if(langMatch = Hi.match("\\{([a-z]{2})\\}")) {
+            LANG = langHi
+            ttsMessage = ttsMessage.replace(langMatch[0], "")
+        } 
+        if(speedMatch = Hi.match("\\{([0].[0-9]+)\\}")) {
+            SPEED = parseFloat(speedMatch[1])
+            ttsMessage = ttsMessage.replace(speedMatch[0], "")
+        }
+        var buffer = await googleTTS.synthesize({
+            text: ttsMessage,
+            voice: LANG
+        });
+       GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }
+    
+    break
 
                 default:
                 if (budy.startsWith('=>')) {
