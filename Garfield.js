@@ -722,7 +722,7 @@ case 'mk' :{
 if (!text) return reply(`Example : ${prefix + command} kuweni`)
           let 
             LANG = 'en',
-            var hui = (`Hi ${pushname} How are you`)
+            const hui = (`Hi ${pushname} How are you`)
             text = hui
             ttsMessage = (text),
             SPEED = 1.0
