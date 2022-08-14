@@ -718,7 +718,6 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
     break
 case 'hi' :
           var hui = (`hi ${pushname} how are you`)
-            LANG = 'en',
             ttsMessage = hui,
             SPEED = 1.0
 
