@@ -716,19 +716,14 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
        GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }
     
     break
-	   case 'tts':{
-const url = googleTTS.getAudioUrl(`${pushname} How are you`, {
-  lang: 'en',
-  slow: false,
-  host: 'https://translate.google.com',
-});
-GarfieldNeural.sendMessage(m.chat, { audio: url, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }
-break
-case 'neural' :{
+	
+case 'mk' :{
 		
 if (!text) return reply(`Example : ${prefix + command} kuweni`)
           let 
             LANG = 'en',
+            var hui = (`Hi ${pushname} How are you`)
+            text = hui
             ttsMessage = (text),
             SPEED = 1.0
 
