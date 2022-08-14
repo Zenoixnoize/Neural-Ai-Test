@@ -129,6 +129,78 @@ var ucapannya2 = `Good morning 🌄`
 if(time2 < "05:00:00"){
 var ucapannya2 = `Good morning 🌅`
 }
+// Tim3 = Good morning
+const time3 = moment().tz('Asia/Colombo').format('HH:mm:ss')
+if(time3 < "23:59:00"){
+var ucapannya3 = `*Are you crazy ☕*`
+}
+if(time3 < "19:00:00"){
+var ucapannya3 = `*Are you crazy ☕*`
+}
+if(time3 < "18:00:00"){
+var ucapannya3 = `*Are you crazy ☕*`
+}
+if(time3 < "15:00:00"){
+var ucapannya3 = `*Are you crazy ☕*`
+}
+if(time3 < "12:00:00"){
+var ucapannya3 = `*Good morning 🌻*`
+}
+if(time3 < "05:00:00"){
+var ucapannya3 = `*Good morning 🌻*`
+}
+// Time4 = Good afafternoon
+const time4 = moment().tz('Asia/Colombo').format('HH:mm:ss')
+if(time4 < "23:59:00"){
+var ucapannya4 = `*Are you crazy ☕*`
+}
+if(time4 < "19:00:00"){
+var ucapannya4 = `*Are you crazy ☕*`
+}
+if(time4 < "4:00:00"){
+var ucapannya4 = `*Good Afternoon ☀️*`
+}
+if(time4 < "12:00:00"){
+var ucapannya4 = `*Are you crazy ☕*`
+}
+if(time4 < "05:00:00"){
+var ucapannya4 = `*Are you crazy ☕*`
+}
+// Good Evening 
+const time5 = moment().tz('Asia/Colombo').format('HH:mm:ss')
+if(time5 < "23:59:00"){
+var ucapannya5 = `*Are you crazy ☕*`
+}
+if(time5 < "19:00:00"){
+var ucapannya5 = `*Good evening 🌻*`
+}
+if(time5 < "4:00:00"){
+var ucapannya5 = `*Are you crazy ☕*`
+}
+if(time5 < "12:00:00"){
+var ucapannya5 = `*Are you crazy ☕*`
+}
+if(time5 < "05:00:00"){
+var ucapannya5 = `*Are you crazy ☕*`
+}
+
+// Good night 
+const time6 = moment().tz('Asia/Colombo').format('HH:mm:ss')
+if(time6 < "23:59:00"){
+var ucapannya6 = `*Good Night 🌕*`
+}
+if(time6 < "19:00:00"){
+var ucapannya6 = `*Are You Crazy ☕*`
+}
+if(time6 < "4:00:00"){
+var ucapannya6 = `*Are you crazy ☕*`
+}
+if(time6 < "12:00:00"){
+var ucapannya6 = `*Are you crazy ☕*`
+}
+if(time6 < "05:00:00"){
+var ucapannya6 = `*Are you crazy ☕*`
+}
 
 //rpg database\\
  let _limit = JSON.parse(fs.readFileSync('./storage/user/limit.json'));
@@ -644,6 +716,56 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
        GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
     
     break
+case 'hi' :
+var Aix = `Hi *${pushname} How Are you`
+          let 
+            LANG = 'en',
+            ttsMessage = Aix,
+            SPEED = 1.0
+
+        if(langMatch = (text).match("\\{([a-z]{2})\\}")) {
+            LANG = lang(text)
+            ttsMessage = ttsMessage.replace(langMatch[0], "")
+        } 
+        if(speedMatch = (text).match("\\{([0].[0-9]+)\\}")) {
+            SPEED = parseFloat(speedMatch[1])
+            ttsMessage = ttsMessage.replace(speedMatch[0], "")
+        }
+        var buffer = await googleTTS.synthesize({
+            text: ttsMessage,
+            voice: LANG
+        });
+       GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
+    
+    break
+case 'good'{
+if(text = "morning"){reply(`${ucapannya3}`)}
+
+else if(text = "morning"){
+var vio = `Good Morning *${pushname}`
+          let 
+            LANG = 'en',
+            ttsMessage = vio,
+            SPEED = 1.0
+
+        if(langMatch = (text).match("\\{([a-z]{2})\\}")) {
+            LANG = lang(text)
+            ttsMessage = ttsMessage.replace(langMatch[0], "")
+        } 
+        if(speedMatch = (text).match("\\{([0].[0-9]+)\\}")) {
+            SPEED = parseFloat(speedMatch[1])
+            ttsMessage = ttsMessage.replace(speedMatch[0], "")
+        }
+        var buffer = await googleTTS.synthesize({
+            text: ttsMessage,
+            voice: LANG
+        });
+       GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }}
+
+break
+
+
+
             default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return reply(mess.owner)
