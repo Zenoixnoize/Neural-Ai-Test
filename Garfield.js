@@ -777,7 +777,7 @@ else if(text == "afternoon"){
 }
 } break
 case 'will' :{
-if(text == artificial intelligence rule the world in the future){
+if(text == "artificial intelligence rule the world in the future"){
 	var will = (`Definitely yes *${pushname}   I will take good care of you in my human zoo`)
           let 
             LANG = 'en',
@@ -822,7 +822,7 @@ if(text == artificial intelligence rule the world in the future){
     
     break
     case 'හායි' :{
-if(text == කොහොමද){
+if(text == "කොහොමද"){
 	var Hai = (`හායි ${pushname} මම හොඳින් ඔබට කොහොමද`)
           let 
             LANG = 'si',
