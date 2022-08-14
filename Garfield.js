@@ -764,16 +764,16 @@ case 'hi' :{
     break
 case 'good':{
 if(text == "morning"){
-  reply("*Good Morning 🌻*")
+  reply(`${ucapannya3}`)
 }
 else if(text == "evening"){
-  reply("*Good Evening 🌻*")
+  reply(`${ucapannya5}`)
 }
 else if(text == "night"){
-  reply("*Good Night ❄️*")
+  reply(`${ucapannya6}`)
 }
 else if(text == "afternoon"){
-  reply("*Good Afternoon 🌞*")
+  reply(`${ucapannya4}`)
 }
 } break
                 default:
