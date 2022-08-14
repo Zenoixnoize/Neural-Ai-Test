@@ -721,6 +721,7 @@ case 'mk' :{
 		
 if (!text) return reply(`Example : ${prefix + command} kuweni`)
          const hui = (`Hi ${pushname} How are you`) ;
+         (text) = hui
           let 
             LANG = 'en',
  
