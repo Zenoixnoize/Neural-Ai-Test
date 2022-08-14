@@ -762,7 +762,20 @@ case 'hi' :{
        GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }
     
     break
-
+case 'good':{
+if(text == "morning"){
+  reply("*Good Morning 🌻*")
+}
+else if(text == "evening"){
+  reply("*Good Evening 🌻*")
+}
+else if(text == "night"){
+  reply("*Good Night ❄️*")
+}
+else if(text == "afternoon"){
+  reply("*Good Afternoon 🌞*")
+}
+} break
                 default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return reply(mess.owner)
