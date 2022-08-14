@@ -720,10 +720,11 @@ if (!text) return reply(`Example : ${prefix + command} kuweni`)
 case 'mk' :{
 		
 if (!text) return reply(`Example : ${prefix + command} kuweni`)
+         const hui = (`Hi ${pushname} How are you`) ;
           let 
             LANG = 'en',
-            const hui = (`Hi ${pushname} How are you`)
-            text = hui
+ 
+            text = hui,
             ttsMessage = (text),
             SPEED = 1.0
 
