@@ -62,6 +62,21 @@ global.mess = {
     free: 12,
     monayawal: 1000
 }
+
+global.limitAwal = "99999999999999999"
+global.lolkey = "835641f3d2d1b6971e1fd132"
+global.xteam = "apivproject"
+global.xcodeapi = "5S3epf7hC2"
+global.dapaapi = "piceg"
+global.sankey = "sanuwa"
+global.xteamkey = "nandowangy"
+global.carkey = "cakrayp24Q6"
+global.violkey = "beta"
+global.HunterApi = "FuckBitch"
+global.neokey = "V8qnSaTq"
+global.riy = "RiyGanz"
+
+
    global.rpg = {
    darahawal: 100,
    besiawal: 15,
