@@ -852,8 +852,8 @@ if(text == "කොහොමද"){
             //Testing 
             
                 let buttons = [
-                    {buttonId: `x1828 $(text)`, buttonText: {displayText: 'High 📽️ '}, type: 1},
-                    {buttonId:  `gshs $(text)`, buttonText: {displayText: 'Low 📽️'}, type: 1}
+                    {buttonId: `x1828 ${text}`, buttonText: {displayText: 'High 📽️ '}, type: 1},
+                    {buttonId:  `gshs ${text}`, buttonText: {displayText: 'Low 📽️'}, type: 1}
                 ]
                 let buttonMessage = {
                     image: { url: `https://i.ibb.co/b5Bzs3Z/Pics-Art-22-08-15-12-58-04-203.png`},
