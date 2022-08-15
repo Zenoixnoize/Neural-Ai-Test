@@ -846,7 +846,6 @@ if(text == "කොහොමද"){
     break
     case 'fb': case 'facebook2': {
 	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
-	            var xui = await getBuffer(global.thumb)
                 if (!text) throw '*Enter a Link Query!*'
                 if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw '*The link you provided is not valid*'
                 anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)
@@ -857,7 +856,7 @@ if(text == "කොහොමද"){
                     {buttonId:  `fiu text`, buttonText: {displayText: 'Low 📽️'}, type: 1}
                 ]
                 let buttonMessage = {
-                    image: { url: xui},
+                    image: { url: `https://i.ibb.co/b5Bzs3Z/Pics-Art-22-08-15-12-58-04-203.png`},
                     caption:  ' ```Title``` - *' + anu.result.meta.title + '*\n```Platform``` - *Facebook*\n*Selecte Quality*',
                     footer: `𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т 2022`,
                     buttons: buttons,
@@ -867,16 +866,16 @@ if(text == "කොහොමද"){
            
              }
             break
-               case 'x1828': case '89bo2': {
+               case 'x1828': {
 	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
-	            reply('```Uploading high quality Video ☁️```')
-                anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)
+                anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)             
+	            m.reply('```Uploading high quality Video ☁️```')
                 GarfieldNeural.sendMessage(m.chat, { document: { url: anu.result.url[0].url }, mimetype: 'video/mp4', fileName: `${anu.result.meta.title}.mp4` }, { quoted: m })
             }
-            case 'gshs': case 'fiu': {
+            case 'gshs': {
 	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
-	            reply('```Uploading low quality Video ☁️```')
-                anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)
+                anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)              
+	            m.reply('```Uploading low quality Video ☁️```')
                 GarfieldNeural.sendMessage(m.chat, { document: { url: anu.result.url[0].url }, mimetype: 'video/mp4', fileName: `${anu.result.meta.title}.mp4` }, { quoted: m })
             }
                 default:
