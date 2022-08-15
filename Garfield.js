@@ -857,8 +857,8 @@ if(text == "කොහොමද"){
                     {buttonId:  `g2hb text`, buttonText: {displayText: 'Low 📽️'}, type: 1}
                 ]
                 let buttonMessage = {
-                    image: { url: global.spoty },
-                    caption:  ' ```Title``` - *' + anu.result.meta.title + '*\n```Platform``` - *Facebook*\n```Quality``` - *720p*',
+                    image: { url: xui},
+                    caption:  ' ```Title``` - *' + anu.result.meta.title + '*\n```Platform``` - *Facebook*\n*Selecte Quality*',
                     footer: `𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т 2022`,
                     buttons: buttons,
                     headerType: 4
@@ -867,7 +867,7 @@ if(text == "කොහොමද"){
            
              }
             break
-               case 'ghb': case 'facebo2': {
+               case 'ghb': case 'facecbo2': {
 	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
 	            reply('```Uploading high quality Video ☁️```')
                 anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)
