@@ -852,8 +852,8 @@ if(text == "කොහොමද"){
             //Testing 
             
                 let buttons = [
-                    {buttonId: `x1828 text`, buttonText: {displayText: 'High 📽️ '}, type: 1},
-                    {buttonId:  `fiu text`, buttonText: {displayText: 'Low 📽️'}, type: 1}
+                    {buttonId: `x1828 $(text)`, buttonText: {displayText: 'High 📽️ '}, type: 1},
+                    {buttonId:  `gshs $(text)`, buttonText: {displayText: 'Low 📽️'}, type: 1}
                 ]
                 let buttonMessage = {
                     image: { url: `https://i.ibb.co/b5Bzs3Z/Pics-Art-22-08-15-12-58-04-203.png`},
@@ -869,13 +869,13 @@ if(text == "කොහොමද"){
                case 'x1828': {
 	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
                 anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)             
-	            m.reply('```Uploading high quality Video ☁️```')
+	            m.reply('```Uploading high quality Video ☁️```') ;
                 GarfieldNeural.sendMessage(m.chat, { document: { url: anu.result.url[0].url }, mimetype: 'video/mp4', fileName: `${anu.result.meta.title}.mp4` }, { quoted: m })
             }
             case 'gshs': {
 	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
                 anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)              
-	            m.reply('```Uploading low quality Video ☁️```')
+	            m.reply('```Uploading low quality Video ☁️```') ;
                 GarfieldNeural.sendMessage(m.chat, { document: { url: anu.result.url[0].url }, mimetype: 'video/mp4', fileName: `${anu.result.meta.title}.mp4` }, { quoted: m })
             }
                 default:
