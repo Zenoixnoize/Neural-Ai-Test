@@ -856,7 +856,7 @@ if(text == "කොහොමද"){
                     {buttonId:  `gshs ${text}`, buttonText: {displayText: 'Low 📽️'}, type: 1}
                 ]
                 let buttonMessage = {
-                    image: { url: `https://i.ibb.co/b5Bzs3Z/Pics-Art-22-08-15-12-58-04-203.png`},
+                    image: { url: `https://i.ibb.co/D4fbb8h/Pics-Art-22-08-15-14-11-46-977.png`},
                     caption:  ' ```Title``` - *' + anu.result.meta.title + '*\n```Platform``` - *Facebook*\n*Selecte Quality*',
                     footer: `𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т 2022`,
                     buttons: buttons,
@@ -872,12 +872,14 @@ if(text == "කොහොමද"){
 	            m.reply('```Uploading high quality Video ☁️```') ;
                 GarfieldNeural.sendMessage(m.chat, { document: { url: anu.result.url[0].url }, mimetype: 'video/mp4', fileName: `${anu.result.meta.title}.mp4` }, { quoted: m })
             }
+            break
             case 'gshs': {
 	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
                 anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)              
 	            m.reply('```Uploading low quality Video ☁️```') ;
                 GarfieldNeural.sendMessage(m.chat, { document: { url: anu.result.url[0].url }, mimetype: 'video/mp4', fileName: `${anu.result.meta.title}.mp4` }, { quoted: m })
             }
+            break
                 default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return reply(mess.owner)
