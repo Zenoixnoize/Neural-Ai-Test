@@ -846,15 +846,15 @@ if(text == "කොහොමද"){
     break
     case 'fb': case 'facebook2': {
 	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
-	            var xui = await getBuffer("https://i.ibb.co/b5Bzs3Z/Pics-Art-22-08-15-12-58-04-203.png")
+	            var xui = await getBuffer(global.thumb)
                 if (!text) throw '*Enter a Link Query!*'
                 if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw '*The link you provided is not valid*'
                 anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)
             //Testing 
             
                 let buttons = [
-                    {buttonId: `ghb text`, buttonText: {displayText: 'High 📽️ '}, type: 1},
-                    {buttonId:  `g2hb text`, buttonText: {displayText: 'Low 📽️'}, type: 1}
+                    {buttonId: `x1828 text`, buttonText: {displayText: 'High 📽️ '}, type: 1},
+                    {buttonId:  `fiu text`, buttonText: {displayText: 'Low 📽️'}, type: 1}
                 ]
                 let buttonMessage = {
                     image: { url: xui},
@@ -867,13 +867,13 @@ if(text == "කොහොමද"){
            
              }
             break
-               case 'ghb': case 'facecbo2': {
+               case 'x1828': case '89bo2': {
 	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
 	            reply('```Uploading high quality Video ☁️```')
                 anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)
                 GarfieldNeural.sendMessage(m.chat, { document: { url: anu.result.url[0].url }, mimetype: 'video/mp4', fileName: `${anu.result.meta.title}.mp4` }, { quoted: m })
             }
-            case 'g2hb': case 'facejbo2': {
+            case 'gshs': case 'fiu': {
 	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
 	            reply('```Uploading low quality Video ☁️```')
                 anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)
