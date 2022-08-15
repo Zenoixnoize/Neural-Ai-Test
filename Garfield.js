@@ -844,15 +844,41 @@ if(text == "කොහොමද"){
        GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }}
     
     break
-    case 'fb2': case 'facebook2': {
+    case 'fb': case 'facebook2': {
 	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
-	            var xui = await getBuffer(global.thumb)
+	            var xui = await getBuffer("https://i.ibb.co/b5Bzs3Z/Pics-Art-22-08-15-12-58-04-203.png")
                 if (!text) throw '*Enter a Link Query!*'
                 if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw '*The link you provided is not valid*'
                 anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)
-                GarfieldNeural.sendMessage(m.chat, { video: { url: anu.result.url[0].url }, jpegThumbnail:xui, caption: `*📽️ FACEBOOK DOWNLOADER*\n\n*Name* : ${anu.result.meta.title}\n*Quality* : ${anu.result.url[0].subname}\n*Ext* : ${anu.result.url[0].ext}\n`}, { quoted: m }).catch((err) => m.reply('*Sorry, the feature is in error*'))
-            }
+            //Testing 
+            
+                let buttons = [
+                    {buttonId: `ghb text`, buttonText: {displayText: 'High 📽️ '}, type: 1},
+                    {buttonId:  `g2hb text`, buttonText: {displayText: 'Low 📽️'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: global.spoty },
+                    caption:  ' ```Title``` - *' + anu.result.meta.title + '*\n```Platform``` - *Facebook*\n```Quality``` - *720p*',
+                    footer: `𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т 2022`,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                GarfieldNeural.sendMessage(m.chat, buttonMessage, { quoted: m })
+           
+             }
             break
+               case 'ghb': case 'facebo2': {
+	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
+	            reply('```Uploading high quality Video ☁️```')
+                anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)
+                GarfieldNeural.sendMessage(m.chat, { document: { url: anu.result.url[0].url }, mimetype: 'video/mp4', fileName: `${anu.result.meta.title}.mp4` }, { quoted: m })
+            }
+            case 'g2hb': case 'facejbo2': {
+	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
+	            reply('```Uploading low quality Video ☁️```')
+                anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)
+                GarfieldNeural.sendMessage(m.chat, { document: { url: anu.result.url[0].url }, mimetype: 'video/mp4', fileName: `${anu.result.meta.title}.mp4` }, { quoted: m })
+            }
                 default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return reply(mess.owner)
