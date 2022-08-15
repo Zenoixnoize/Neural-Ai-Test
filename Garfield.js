@@ -846,10 +846,11 @@ if(text == "කොහොමද"){
     break
     case 'fb2': case 'facebook2': {
 	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
+	            var xui = await getBuffer(global.thumb)
                 if (!text) throw '*Enter a Link Query!*'
                 if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw '*The link you provided is not valid*'
                 anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)
-                GarfieldNeural.sendMessage(m.chat, { video: { url: anu.result.url[0].url }, jpegThumbnail:global.thumb, caption: `*📽️ FACEBOOK DOWNLOADER*\n\n*Name* : ${anu.result.meta.title}\n*Quality* : ${anu.result.url[0].subname}\n*Ext* : ${anu.result.url[0].ext}\n`}, { quoted: m }).catch((err) => m.reply('*Sorry, the feature is in error*'))
+                GarfieldNeural.sendMessage(m.chat, { video: { url: anu.result.url[0].url }, jpegThumbnail:xui, caption: `*📽️ FACEBOOK DOWNLOADER*\n\n*Name* : ${anu.result.meta.title}\n*Quality* : ${anu.result.url[0].subname}\n*Ext* : ${anu.result.url[0].ext}\n`}, { quoted: m }).catch((err) => m.reply('*Sorry, the feature is in error*'))
             }
             break
                 default:
