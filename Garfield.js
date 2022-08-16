@@ -882,7 +882,7 @@ if(text == "කොහොමද"){
     sarcasm[0] = `${pushname} You dont have a partner`;
     sarcasm[1] = `*${pushname} Your future partner is not yet born` ;
     sarcasm[2] = `hmmm hmmm ${pushname} You have no future partner, you will die alone` ;
-    sarcasm[3] = `${pushname} , l I am your future partner and I love you` ;
+    sarcasm[3] = `${pushname} , l  am your future partner and I love you` ;
     sarcasm[4] = `Sorry ${pushname} , no one likes your ugly look` ;
     sarcasm[5] = `wow ${pushname} , Your future partner is in Korea` ;
     sarcasm[6] = `sorry ${pushname} , Your gay love is having sex right now` ;
@@ -902,6 +902,38 @@ if(text == "කොහොමද"){
     sarcasm[20] = `${pushname} Your partner will find you and come` ;
     const refi = sarcasm[Math.floor(Math.random() * sarcasm.length)]
     if(text == "partner"){
+	var Hai = `${refi}`
+          let 
+            LANG = 'en',
+            ttsMessage = Hai,
+            SPEED = 1.0
+
+        if(langMatch = Hai.match("\\{([a-z]{2})\\}")) {
+            LANG = langHai
+            ttsMessage = ttsMessage.replace(langMatch[0], "")
+        } 
+        if(speedMatch = Hai.match("\\{([0].[0-9]+)\\}")) {
+            SPEED = parseFloat(speedMatch[1])
+            ttsMessage = ttsMessage.replace(speedMatch[0], "")
+        }
+        var buffer = await googleTTS.synthesize({
+            text: ttsMessage,
+            voice: LANG
+        });
+       GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }
+}
+
+break
+case 'what':{
+var WhAi = text.includes("is")
+            		const sarcasm = new Array ();
+    sarcasm[0] = `Hey , ${pushname} , ${text} , I don't know, just search on Google `;
+    sarcasm[1] = `Hey , ${pushname} , ${text} , I don't know , Ask your girlfriend` ;
+    sarcasm[2] = `Hey , ${pushname} , ${text} , I don't know , just search youtube` ;
+    sarcasm[3] = `Hey , ${pushname} , ${text} , I don't know , ask your father` ;
+    sarcasm[4] = `Hey , ${pushname} , ${text} , I don't know , ask your mother ` ;
+    const refi = sarcasm[Math.floor(Math.random() * sarcasm.length)]
+    if(whAi == true){
 	var Hai = `${refi}`
           let 
             LANG = 'en',
