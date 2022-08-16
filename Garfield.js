@@ -979,12 +979,14 @@ if(mui == true){
 
 break
 case 'sex':{
+            let me = m.sender
+            let ments = [me]
             let jawab = `*Do you want to have sex with me?*`
                          let buttons = [
                     {buttonId: `Neural eww ${pushname} ,  your penis is very small`, buttonText: {displayText: 'Yes️'}, type: 1},
                     {buttonId:  `Neural Ok`, buttonText: {displayText: 'No️'}, type: 1}
                 ]             
-             await GarfieldNeural.sendButtonText(m.chat, buttons, jawab,`Neural Ai` , m})
+             await GarfieldNeural.sendButtonText(m.chat, buttons, jawab,`Neural Ai` , m, {mentions: ments})
             }
             break
 
