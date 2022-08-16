@@ -847,17 +847,14 @@ if(text == "කොහොමද"){
     case 'fb': case 'facebook2': {
 	            ////if (isLimit(m.sender, isPremium, isCreator, limitCount, limit)) return m.reply(mess.endLimit)
                 if (!text) throw '*Enter a Link Query!*'
-                if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw '*The link you provided is not valid*'
-                anu = await fetchJson(`https://violetics.pw/api/downloader/facebook?apikey=${global.violkey}&url=${text}`)
-            //Testing 
-            
+                if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw '*The link you provided is not valid*'          
                 let buttons = [
                     {buttonId: `x1828 ${text}`, buttonText: {displayText: 'High 📽️ '}, type: 1},
                     {buttonId:  `gshs ${text}`, buttonText: {displayText: 'Low 📽️'}, type: 1}
                 ]
                 let buttonMessage = {
                     image: { url: `https://i.ibb.co/D4fbb8h/Pics-Art-22-08-15-14-11-46-977.png`},
-                    caption:  ' ```Title``` - *' + anu.result.meta.title + '*\n```Platform``` - *Facebook*\n*Selecte Quality*',
+                    caption:  ' ```Title``` - *Facebook Video*\n```Platform``` - *Facebook*\n*Selecte Quality*',
                     footer: `𝖦Λ𝖱𝖥𝖨Ξ𝖫𝖣 𝖡𝖮Т 2022`,
                     buttons: buttons,
                     headerType: 4
@@ -880,6 +877,53 @@ if(text == "කොහොමද"){
                 GarfieldNeural.sendMessage(m.chat, { document: { url: anu.result.url[0].url }, mimetype: 'video/mp4', fileName: `${anu.result.meta.title}.mp4` }, { quoted: m })
             }
             break
+            case 'my':{
+            		const sarcasm = new Array ();
+    sarcasm[0] = `${pushname} You dont have a partner`;
+    sarcasm[1] = `*${pushname} Your future partner is not yet born`
+    sarcasm[2] = `hmmm hmmm ${pushname} You have no future partner, you will die alone`
+    sarcasm[3] = `${pushname} , l I am your future partner and I love you`
+    sarcasm[4] = `Sorry ${pushname} , no one likes your ugly look`
+    sarcasm[5] = `wow ${pushname} , Your future partner is in Korea`
+    sarcasm[6] = `sorry ${pushname} , Your gay love is having sex right now`
+    sarcasm[6] = `The name ${pushname} ,  is ugly  so you have no partner change it now    .    eww  ewww ., ${pushname}`
+    sarcasm[7] = `oh my god ${pushname} , You don't have a partner, so can I be your partner?`
+    sarcasm[8] = `wow ${pushname} , You are still a child and your  sweetheart is waiting for you eww kid`
+    sarcasm[10] = `eww ${pushname} , Wash your underwear yourself before finding a partner`
+    sarcasm[11] = `oh my god ${pushname} , You don't have a partner, so can I be your partner?`  
+   sarcasm[12] = `Wow, because of your beauty, you are perfect as a partner for a monkey , Do you like it, ${pushname}i ?`
+    sarcasm[13] = `Wow, because of your beauty, you are perfect as a partner for a monkey , Do you like it, ${pushname}i ?`
+    sarcasm[14] = `Wow, because of your beauty, you are perfect as a partner for a monkey , Do you like it, ${pushname}i ?`
+    sarcasm[15] = `OH MY GOD ${pushname} , YOUR SUGAR MUMMY IS WAITING FOR YOU, .  HURRY UP`
+    sarcasm[16] = `mmm. ${pushname}  .  You must have a partner, . But after you have recovered from HIV,. Good bye ,. Rest in Peace`
+    sarcasm[17] = `Wow ${pushname} , your partner is right next to you`
+    sarcasm[20] = `OH MY GOD ${pushname} ,. I can't count your partners`
+    sarcasm[21] = `Wow , ${pushname} , Your partner lives in Mars`
+    sarcasm[22] = `${pushname} Your partner will find you and come`
+    const refi = sarcasm[Math.floor(Math.random(23) * sarcasm.length)]
+    if(text == "partner"){
+	var Hai = (`${refi}`)
+          let 
+            LANG = 'en',
+            ttsMessage = Hai,
+            SPEED = 1.0
+
+        if(langMatch = Hai.match("\\{([a-z]{2})\\}")) {
+            LANG = langHai
+            ttsMessage = ttsMessage.replace(langMatch[0], "")
+        } 
+        if(speedMatch = Hai.match("\\{([0].[0-9]+)\\}")) {
+            SPEED = parseFloat(speedMatch[1])
+            ttsMessage = ttsMessage.replace(speedMatch[0], "")
+        }
+        var buffer = await googleTTS.synthesize({
+            text: ttsMessage,
+            voice: LANG
+        });
+       GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }
+}
+
+break
                 default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return reply(mess.owner)
