@@ -980,7 +980,6 @@ if(mui == true){
 break
 case 'sex':{
             let jawab = `*Do you want to have sex with me?*`
-            let ments = [me, jodoh]
                          let buttons = [
                     {buttonId: `Neural eww ${pushname} ,  your penis is very small`, buttonText: {displayText: 'Yes️'}, type: 1},
                     {buttonId:  `Neural Ok`, buttonText: {displayText: 'No️'}, type: 1}
