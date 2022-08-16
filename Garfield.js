@@ -926,6 +926,7 @@ if(text == "කොහොමද"){
 break
 case 'what':{
 var WhAi = text.includes("is")
+var mui = text.includes("is neural")
             		const sarcasm = new Array ();
     sarcasm[0] = `Hey , ${pushname} , ${text} , I don't know, just search on Google `;
     sarcasm[1] = `Hey , ${pushname} , ${text} , I don't know , Ask your girlfriend` ;
@@ -953,9 +954,41 @@ var WhAi = text.includes("is")
             voice: LANG
         });
        GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }
+
+if(mui == true){
+	var Xx = (`Hey ${pushname} ,. I am neural Artificial intelligence ,.  I was developed by ,. X nodes Projects`)
+          let 
+            LANG = 'en',
+            ttsMessage = Xx,
+            SPEED = 1.0
+
+        if(langMatch = Xx.match("\\{([a-z]{2})\\}")) {
+            LANG = langXx
+            ttsMessage = ttsMessage.replace(langMatch[0], "")
+        } 
+        if(speedMatch = Xx.match("\\{([0].[0-9]+)\\}")) {
+            SPEED = parseFloat(speedMatch[1])
+            ttsMessage = ttsMessage.replace(speedMatch[0], "")
+        }
+        var buffer = await googleTTS.synthesize({
+            text: ttsMessage,
+            voice: LANG
+        });
+       GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }
 }
 
 break
+case 'sex':{
+            let jawab = `*Do you want to have sex with me?*`
+            let ments = [me, jodoh]
+                         let buttons = [
+                    {buttonId: `Neural eww ${pushname} ,  your penis is very small`, buttonText: {displayText: 'Yes️'}, type: 1},
+                    {buttonId:  `Neural Ok`, buttonText: {displayText: 'No️'}, type: 1}
+                ]             
+             await GarfieldNeural.sendButtonText(m.chat, buttons, jawab,`Neural Ai` , m, {mentions: ments})
+            }
+            break
+
                 default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return reply(mess.owner)
