@@ -984,7 +984,7 @@ case 'sex':{
                     {buttonId: `Neural eww ${pushname} ,  your penis is very small`, buttonText: {displayText: 'Yes️'}, type: 1},
                     {buttonId:  `Neural Ok`, buttonText: {displayText: 'No️'}, type: 1}
                 ]             
-             await GarfieldNeural.sendButtonText(m.chat, buttons, jawab,`Neural Ai` , m, {mentions: ments})
+             await GarfieldNeural.sendButtonText(m.chat, buttons, jawab,`Neural Ai` , m})
             }
             break
 
