@@ -902,7 +902,7 @@ if(text == "කොහොමද"){
     sarcasm[20] = `${pushname} Your partner will find you and come` ;
     const refi = sarcasm[Math.floor(Math.random() * sarcasm.length)]
     if(text == "partner"){
-	var Hai = (`${refi}`)
+	var Hai = `${refi}`
           let 
             LANG = 'en',
             ttsMessage = Hai,
