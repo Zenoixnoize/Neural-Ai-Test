@@ -933,7 +933,7 @@ var WhAi = text.includes("is")
     sarcasm[3] = `Hey , ${pushname} , ${text} , I don't know , ask your father` ;
     sarcasm[4] = `Hey , ${pushname} , ${text} , I don't know , ask your mother ` ;
     const refi = sarcasm[Math.floor(Math.random() * sarcasm.length)]
-    if(whAi == true){
+    if(WhAi == true){
 	var Hai = `${refi}`
           let 
             LANG = 'en',
