@@ -378,8 +378,6 @@ const reply = (teks) => {
 					GarfieldNeural.sendMessage(m.chat, { video: result }, { quoted: m })
 					}
 				  }
-				   for (let bdword of badword){
-				if (budy === bdword)
 
       //Mute Chat\\
       if (db.data.chats[m.chat].mute && !isAdmins && !isCreator) {
