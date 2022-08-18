@@ -989,11 +989,12 @@ case 'sex':{
              await GarfieldNeural.sendButtonText(m.chat, buttons, jawab,`Neural Ai` , m, {mentions: ments})
             }
             break
-            case 'attp':{
+            case 'stk':{
    axios.get(`https://api.xteam.xyz/attp?file&text=${text}`)
 					.then(({data}) => {
 						GarfieldNeural.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 					})
+        await GarfieldNeural.sendMessage(message.jid,Buffer.from(ttinullimage.data), MessageType.sticker, { mimetype: Mimetype.webp })
 					}
 break
 case 'antibad': {
