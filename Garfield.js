@@ -996,10 +996,11 @@ case 'sex':{
   var ttinullimage = await axios.get('https://api.xteam.xyz/attp?file&text=' + uri, { responseType: 'arraybuffer' })
    GarfieldNeural.sendMessage(m.chat, { sticker: ttinullimage.data, mimetype: 'webp', ptt: true }, { quoted: m }) }
 break
-case 'Antibad'
+case 'Antibad'{
 if(text == 'on'){
 var Antibd = true
-if(Antibd = true){reply("Anti bad On ⚠️")
+if(Antibd = true){m.reply("Anti bad On ⚠️")
+}
 }
 }
 break
