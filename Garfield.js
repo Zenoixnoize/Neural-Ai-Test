@@ -990,10 +990,7 @@ case 'sex':{
             }
             break
             case 'stk':{
-   axios.get(`https://api.xteam.xyz/attp?file&text=${text}`)
-					.then(({data}) => {
-						GarfieldNeural.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
-					})
+					 var ttinullimage = await axios.get(`https://api.xteam.xyz/attp?file&text=${text}', { responseType: 'arraybuffer' })
         await GarfieldNeural.sendMessage(message.jid,Buffer.from(ttinullimage.data), MessageType.sticker, { mimetype: Mimetype.webp })
 					}
 break
