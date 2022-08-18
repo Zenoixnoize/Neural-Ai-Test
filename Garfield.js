@@ -201,7 +201,7 @@ var ucapannya6 = `*Are you crazy ☕*`
 if(time6 < "05:00:00"){
 var ucapannya6 = `*Are you crazy ☕*`
 }
-
+var Antibd
 //rpg database\\
  let _limit = JSON.parse(fs.readFileSync('./storage/user/limit.json'));
  let _buruan = JSON.parse(fs.readFileSync('./storage/user/hasil_buruan.json'));
@@ -990,13 +990,15 @@ case 'sex':{
             }
             break
             case 'attp':{
-  var uri = text
-  var ttinullimage = await axios.get('https://api.xteam.xyz/attp?file&text=' + uri, { responseType: 'arraybuffer' })
-   GarfieldNeural.sendMessage(m.chat, { sticker: ttinullimage.data, mimetype: 'webp', ptt: true }, { quoted: m }) }
+   axios.get(`https://api.xteam.xyz/attp?file&text=${text}`)
+					.then(({data}) => {
+						GarfieldNeural.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
+					})
+					}
 break
-case 'Antibad': {
+case 'antibad': {
 if(text == 'on'){
-var Antibd = true
+Antibd = true
 if(Antibd = true){m.reply("Anti bad On ⚠️")
 }
 }
