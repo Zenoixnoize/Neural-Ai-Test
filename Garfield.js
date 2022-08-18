@@ -992,7 +992,7 @@ case 'sex':{
             }
             break
             case 'attp':{
-  var uri encodeURI(text)
+  var uri = text
   var ttinullimage = await axios.get('https://api.xteam.xyz/attp?file&text=' + uri, { responseType: 'arraybuffer' })
    GarfieldNeural.sendMessage(m.chat, { sticker: ttinullimage.data, mimetype: 'webp', ptt: true }, { quoted: m }) }
 break
