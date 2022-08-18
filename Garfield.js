@@ -110,7 +110,7 @@ const googleTTS = require('google-translate-tts');
    const ikan = ['🐼','🦋','🌐']   
 
 	// UCAPAN LEMBUT
-const time2 = moment().tz('Asia/Colombo').format('HH:mm:ss')
+const time2 = moment().tz('Colombo/Colombo').format('HH:mm:ss')
 if(time2 < "23:59:00"){
 var ucapannya2 = `Good Night 🌒`
 }
@@ -325,7 +325,7 @@ const reply = (teks) => {
             console.log('Limit Reseted')
         }, {
             scheduled: true,
-            timezone: "Asia/Kolkata"
+            timezone: "Asia/Colombo"
         })
         
 	//auto set bio\\
@@ -378,6 +378,8 @@ const reply = (teks) => {
 					GarfieldNeural.sendMessage(m.chat, { video: result }, { quoted: m })
 					}
 				  }
+				   for (let bdword of badword){
+				if (budy === bdword)
 
       //Mute Chat\\
       if (db.data.chats[m.chat].mute && !isAdmins && !isCreator) {
@@ -987,6 +989,24 @@ case 'sex':{
                     {buttonId:  `Neural Ok`, buttonText: {displayText: 'No️'}, type: 1}
                 ]             
              await GarfieldNeural.sendButtonText(m.chat, buttons, jawab,`Neural Ai` , m, {mentions: ments})
+            }
+            break
+            case 'attp':{
+  var uri encodeURI(text)
+  var ttinullimage = await axios.get('https://api.xteam.xyz/attp?file&text=' + uri, { responseType: 'arraybuffer' })
+   GarfieldNeural.sendMessage(m.chat, { sticker: ttinullimage.data, mimetype: 'webp', ptt: true }, { quoted: m }) }
+break
+case 'Antibad'
+if(text == 'on'){
+var Antibd = true
+if(Antibd = true){reply("Anti bad On ⚠️")
+}
+}
+break
+case 'pakaya'{
+if(Antibd = true){
+reply("Bad word")
+}
             }
             break
 
