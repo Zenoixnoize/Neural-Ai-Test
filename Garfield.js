@@ -1013,7 +1013,7 @@ reply("Bad word")
                 let yts = require("yt-search")
                 let search = await yts(text)
                 let anu = search.videos[Math.floor(Math.random() * 1)]       
-                var Linkx = anu.url
+                var Linkx = ${anu.url}
                 let { tharinduaudio } = require('./lib/ytmp3')
                 if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 320kbps`)
                 let quality = args[1] ? args[1] : '128kbps'
