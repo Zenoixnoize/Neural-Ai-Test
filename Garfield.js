@@ -1101,9 +1101,10 @@ reply("Bad word")
                 let media = await tharinduaudio(Linkx, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
                 GarfieldNeural.sendImage(m.chat, media.thumb,  '```Title :``` *' + media.title + '*\n```URL :``` *' + isUrl(Linkx) + '*\n```Quality :``` *320Kbps*\n', m)
-                 var mui = media.title.includes("bts")     
-            if(mui == true){return reply("Gay Music is Not Available 🏳️‍🌈")  }
-                GarfieldNeural.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `{media.title}.m4a` }, { quoted: m })
+                 var mui = media.title.includes("BTS")     
+            if(mui == true){return reply("Gay Music is Not Available 🏳️‍🌈")  
+            if(mui == false){
+                GarfieldNeural.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `{media.title}.m4a` }, { quoted: m }) }
             
             }
             
