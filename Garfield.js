@@ -821,6 +821,46 @@ if(text == "artificial intelligence rule the world in the future"){
        GarfieldNeural.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) }
     
     break
+      case 'spot': case 'spotify': case 'ytpay': {
+                if (!text) return reply(`Example : ${prefix + command} kuweni`)
+                let yts = require("yt-search")
+                let search = await yts(text)    
+                let anu = search.videos[Math.floor(Math.random() * 1)]
+                let buttons = [
+                    {buttonId: `ytww ${anu.url}`, buttonText: {displayText: 'High Quality 🎵'}, type: 1},
+                    {buttonId:  `ytwav ${anu.url}`, buttonText: {displayText: 'Low Quality 🎶'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://i.postimg.cc/HW2YbN1b/Pics-Art-22-08-09-16-12-14-489.png' },
+                    caption:  ' ```Song Name``` - *' + anu.title + '*\n```Duration``` - *' + anu.timestamp + '*\n```Artist``` - *' + anu.author.name + '*\n',
+                    footer: `Spotify Music 2022`,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                GarfieldNeural.sendMessage(m.chat, buttonMessage, { quoted: m })
+           
+             }
+            break
+            	    case 'ytwav': case 'getmudfgcsic': case 'ytaugdgdio': {
+                let { tharinduaudio } = require('./lib/ytmp3')
+                if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 320kbps`)
+                let quality = args[1] ? args[1] : '320kbps'
+                let media = await tharinduaudio(text, quality)
+                if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
+               m.reply('```Downloading song from spotify... ```')
+                GarfieldNeural.sendMessage(m.chat, { document: { url: media.dl_link }, mimetype: 'audio/mp4', fileName: `${media.title} High Quality.m4a` }, { quoted: m })
+            }
+            break
+                case 'ytww': case 'getmudfdgcsic': case 'ytaugdxgdio': {
+                let { tharinduaudio } = require('./lib/ytmp3')
+                if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 320kbps`)
+                let quality = args[1] ? args[1] : '320kbps'
+                let media = await tharinduaudio(text, quality)
+                if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
+               m.reply('```Downloading song from spotify... ```')
+                GarfieldNeural.sendMessage(m.chat, { document: { url: media.dl_link }, mimetype: 'audio/x-wav', fileName: `${media.title} High Quality.wav` }, { quoted: m })
+            }
+            break
     case 'හායි' :{
 if(text == "කොහොමද"){
 	var Hai = (`හායි ${pushname} මම හොඳින් ඔබට කොහොමද`)
