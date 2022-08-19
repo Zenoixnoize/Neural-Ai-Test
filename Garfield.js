@@ -1008,6 +1008,64 @@ reply("Bad word")
 }
             }
             break
+            case 'song': case 'ytplay': {
+                if (!text) return reply(`Example : ${prefix + command} kuweni`)
+                let yts = require("yt-search")
+                let search = await yts(text)
+                let anu = search.videos[Math.floor(Math.random() * 1)]       
+                var Linkx = anu.url
+                let { tharinduaudio } = require('./lib/ytmp3')
+                if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 320kbps`)
+                let quality = args[1] ? args[1] : '128kbps'
+                let media = await tharinduaudio(Linkx, quality)
+                if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
+                GarfieldNeural.sendImage(m.chat, media.thumb,  '```Title :``` *' + media.title + '*\n```URL :``` *' + isUrl(Linkx) + '*\n```Quality :``` *320Kbps*\n', m)
+                GarfieldNeural.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.m4a` }, { quoted: m })
+            
+            }
+            
+            break
+      
+                         case 'play':  {
+                if (!text) return reply(`Example : ${prefix + command} kuweni`)
+                let yts = require("yt-search")
+                let search = await yts(text)
+                let anu = search.videos[Math.floor(Math.random() * 1)]
+                let buttons = [
+                    {buttonId:  `ytmp41080 ${anu.url}`, buttonText: {displayText: '1080p 📽'}, type: 1},
+                    {buttonId:  `ytmp4720 ${anu.url}`, buttonText: {displayText: '720p 📽️'}, type: 1},
+                    {buttonId:  `ytmp4360 ${anu.url}`, buttonText: {displayText: '360p 📽️'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: anu.thumbnail },
+                    caption:  ' ```Title``` - *' + anu.title + '*\n```Duration``` - *' + anu.timestamp + '*\n```Viewes``` - *' + anu.views + '*\n```Uploaded On``` - *' + anu.ago + '*\n```Author``` - *' + anu.author.name + '*\n```Channel``` - *' + anu.author.url + '*\n```Description``` - *' + anu.description + '*\n```URL``` - *' + anu.url + '* ',
+                    footer: `© 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖡𝗒 𝖦𝖺𝗋𝖿𝗂𝖾𝗅𝖽 𝖡𝗈𝗍`,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                GarfieldNeural.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
+            break
+	    case 'ytmp3': case 'getmusic': case 'ytaudio': {
+                let { tharinduaudio } = require('./lib/ytmp3')
+                if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 320kbps`)
+                let quality = args[1] ? args[1] : '320kbps'
+                let media = await tharinduaudio(text, quality)
+                if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
+                GarfieldNeural.sendImage(m.chat, media.thumb,  '```Title :``` *' + media.title + '*\n```URL :``` *' + isUrl(text) + '*\n```Quality :``` *320Kbps*\n', m)
+                GarfieldNeural.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.m4a` }, { quoted: m })
+            }
+            break
+            case 'ytmp4': {
+                let { tharinduyt } = require('./lib/ytmp4')
+                if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`)
+                let quality = args[1] ? args[1] : '360p'
+                let media = await tharinduyt(text, quality)
+                if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
+                GarfieldNeural.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption:'```Title :``` *' + media.title +'*\n```File Size :``` *' + media.filesizeF + '*\n```URL :``` *' + isUrl(text) + '*\n ```Quality  :``` *480p*\n' }, { quoted: m })
+            }
+            break
+     
 
                 default:
                 if (budy.startsWith('=>')) {
