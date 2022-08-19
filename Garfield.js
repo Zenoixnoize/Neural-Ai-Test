@@ -1009,6 +1009,8 @@ reply("Bad word")
             }
             break
             case 'song': case 'ytplay': {
+            var mui = text.includes("bts")
+            if(mui == true){return reply("Gay Music is Not Available")  }
                 if (!text) return reply(`Example : ${prefix + command} kuweni`)
                 let yts = require("yt-search")
                 let search = await yts(text)
@@ -1016,11 +1018,11 @@ reply("Bad word")
                 var Linkx = anu.url
                 let { tharinduaudio } = require('./lib/ytmp3')
                 if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 320kbps`)
-                let quality = args[1] ? args[1] : '128kbps'
+                let quality = args[1] ? args[1] : '320kbps'
                 let media = await tharinduaudio(Linkx, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
                 GarfieldNeural.sendImage(m.chat, media.thumb,  '```Title :``` *' + media.title + '*\n```URL :``` *' + isUrl(Linkx) + '*\n```Quality :``` *320Kbps*\n', m)
-                GarfieldNeural.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.m4a` }, { quoted: m })
+                GarfieldNeural.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: 'media.title.m4a' }, { quoted: m })
             
             }
             
