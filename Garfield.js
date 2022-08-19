@@ -1114,7 +1114,7 @@ reply("Bad word")
                 let media = await tharinduaudio(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
                 GarfieldNeural.sendImage(m.chat, media.thumb,  '```Title :``` *' + media.title + '*\n```URL :``` *' + isUrl(text) + '*\n```Quality :``` *320Kbps*\n', m)
-                GarfieldNeural.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/x-wav', fileName: 'new' + media.title +'very high quality.wav' }, { quoted: m })
+                GarfieldNeural.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/x-wav', fileName: `${media.title} high quality.wav` .}, { quoted: m })
             }
             break
 
